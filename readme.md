@@ -10,7 +10,7 @@ Just a repo to test the reverse proxy and load balancer features of nginx
     $ git clone https://github.com/maumauagain/nginx-load-balancer
 
     # Access the directory containing the project config files
-    $ cd nginx-load-balancer\TesteLoadBalancer\conf
+    $ cd nginx-load-balancer/TesteLoadBalancer/conf
 
     # Run the command below and the app should be available on localhost:8080/
     $ docker-compose up --build -d
