@@ -1,0 +1,37 @@
+networks:
+  test_load:
+    driver: bridge
+
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - 8080:80
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    networks:
+      - test_load
+
+  testeloadbalancer01:
+    image: asp-net-9:latest
+    build: 
+      context: ../.
+      dockerfile: Dockerfile
+    networks:
+      - test_load 
+
+  testeloadbalancer02:
+    image: asp-net-9:latest
+    build: 
+      context: ../.
+      dockerfile: Dockerfile
+    networks:
+      - test_load 
+
+  testeloadbalancer03:
+    image: asp-net-9:latest
+    build: 
+      context: ../.
+      dockerfile: Dockerfile 
+    networks:
+      - test_load 
